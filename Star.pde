@@ -1,8 +1,8 @@
 class Star //note that this class does NOT extend Floater
 {
-  int myColor;
-  int xPosition, yPosition;
-  Star() {
+  private int myColor;
+  private int xPosition, yPosition;
+  public Star() {
     myColor = ((int)(Math.random()*256));
     xPosition = (int)(Math.random()*700);
     yPosition = (int)(Math.random()*700);
@@ -12,4 +12,3 @@ class Star //note that this class does NOT extend Floater
     ellipse(xPosition,yPosition,5,5);
   }
 }
-
