@@ -28,9 +28,8 @@ public void keyPressed() {
     spaceship.accelerate(3.0);
   }
   else if (key == 'w') {
-   spaceship.setXspeed(0);
+   spaceship.setXspeed(Math.random()*180, Math.random()*701, Math.random()*701);
   }
   else {
   }
 }
-
