@@ -7,11 +7,15 @@ class Spaceship extends Floater
     myColor = (255);
     myCenterX = 350.0;
     myCenterY = 350.0; //holds center coordinates
-    myXspeed = 1.0;
-    myYspeed = 1.0; //holds the speed of travel in the x and y directions
+    myXspeed = 0.0;
+    myYspeed = 0.0; //holds the speed of travel in the x and y directions
     myPointDirection = 0.0;
   }
-   public void setXspeed(double x) {
-    myXspeed = x;
+   public void setXspeed(double n, double j, double e) {
+    myPointDirection = n;
+    myCenterX = j;
+    myCenterY = e;
+    myXspeed = 0.0;
+    myYspeed = 0.0;
   }
 }
