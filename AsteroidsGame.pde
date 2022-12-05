@@ -1,35 +1,35 @@
-Spaceship spaceship = new Spaceship();
-Star[] stars = new Star[500];
-public void setup() 
-{
-  size(700,700);
-  background(0);
-  for(int i = 0; i < stars.length; i++) {
-    stars[i] = new Star();
+class Asteroid extends Floater {
+  private double speedOfRotation;
+  public Asteroid(double centerOfX, double centerOfY) {
+    corners = 8;
+    xCorners = new int[] {-25, -15, 15, 25, 25, 15, -15, -25};
+    yCorners = new int[] {10, 25, 25, 10, -10, -25, -25, -10};
+    myColor = ((int)(Math.random()*213)+50);
+    myCenterX = centerOfX;
+    myCenterY = centerOfY; //holds center coordinates
+    myXspeed = (int)(Math.random()*5-2);
+    if (myXspeed == 0) {
+      myXspeed++;
+    }
+    myYspeed = (int)(Math.random()*5-2); //holds the speed of travel in the x and y directions
+    if (myYspeed == 0) {
+      myYspeed++;
+    }
+    myPointDirection = Math.random()*360;
+    speedOfRotation = Math.random()*2+0.1;;
   }
-}
-public void draw() 
-{
-  background(0);
-  for(int i = 0; i < stars.length; i++) {
-    stars[i].show();
+  public void move() {
+    myCenterX += myXspeed;    
+    myCenterY += myYspeed;
+    turn(speedOfRotation);
   }
-  spaceship.show();
-  spaceship.move();
-}
-public void keyPressed() {
-  if (key == 'a') {
-    spaceship.turn(-10);
+  public double getCenterX() {
+    return myCenterX;
   }
-  else if (key == 'd') {
-    spaceship.turn(10);
+  public double getCenterY() {
+    return myCenterY;
   }
-  else if (key == 'f') {
-    spaceship.accelerate(3.0);
-  }
-  else if (key == 'w') {
-   spaceship.setXspeed(Math.random()*180, Math.random()*701, Math.random()*701);
-  }
-  else {
+  public void setXSpeed(double xSpeed) {
+    myXspeed = xSpeed;
   }
 }
