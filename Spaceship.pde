@@ -18,10 +18,19 @@ class Spaceship extends Floater
     myXspeed = 0.0;
     myYspeed = 0.0;
   }
-  public double getMyCenterX() {
+  public double getCenterX() {
     return myCenterX;
   }
-  public double getMyCenterY() {
+  public double getCenterY() {
     return myCenterY;
+  }
+  public double getSpeedX() {
+    return myXspeed;
+  }
+  public double getSpeedY() {
+    return myYspeed;
+  }
+  public double getPointDirection() {
+    return myPointDirection;
   }
 }
